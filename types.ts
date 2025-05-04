@@ -1,0 +1,35 @@
+export type Donor = {
+  _id: string;
+  user: string;
+  user_image: string;
+  text: string;
+  artistic_ability: number;
+  athletic_ability: number;
+  mathematical_ability: number;
+  scientific_ability: number;
+  singing_ability: number;
+  hair_type: string;
+  hair_color: string;
+  education_level: string;
+  jewish_ancestry: string;
+  height_ft: number;
+  height_in: number;
+  logical_creative: string;
+  serious_silly: string;
+  introvert_extrovert: string;
+  relationship_preferences: string;
+  passions: string;
+  goals_in_life: string;
+  greatest_strengths: string;
+  perfect_day: string;
+  dinner_party: string;
+  motivation: string;
+  message_to_ips: string;
+  book: string;
+  movie: string;
+  food: string;
+};
+
+export type SimilarDonor = {
+  $similarity: number;
+} & Donor;
