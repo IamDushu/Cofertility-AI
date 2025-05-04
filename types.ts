@@ -28,6 +28,8 @@ export type Donor = {
   book: string;
   movie: string;
   food: string;
+  $vectorize: string;
+  $vector: Array<number>;
 };
 
 export type SimilarDonor = {
