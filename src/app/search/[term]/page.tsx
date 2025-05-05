@@ -1,6 +1,7 @@
 import DonorCard from "@/src/components/DonorCard";
 import db from "@/db";
 import { Donor } from "@/types";
+// import { getFiltersFromSearchTerm } from "@/lib/openaiHelpers";
 
 // refresh cache every 24 hours
 export const revalidate = 60 * 60 * 24;
@@ -15,9 +16,18 @@ async function SearchTerm({
   const { term } = await params;
   const donors = db.collection("donor");
 
+  // const filters = await getFiltersFromSearchTerm(term);
+  // let cleanedfilters;
+  // if (filters) {
+  //   cleanedfilters = processFilters(filters);
+  // }
+
+  // console.log("Generated Filters: ", cleanedfilters);
+  // console.log("Generated Filters: ", filters);
+
   const similarDonors = (await donors
     .find(
-      {},
+      { hair_type: "wavy", height_ft: { $gte: 5 }, height_in: { $gte: 5 } },
       {
         vectorize: term,
         limit: 10,
@@ -47,5 +57,28 @@ async function SearchTerm({
     </div>
   );
 }
+
+// function processFilters(parsedFilters: Record<string, string | null>) {
+//   const numberFields = [
+//     "artistic_ability",
+//     "athletic_ability",
+//     "mathematical_ability",
+//     "scientific_ability",
+//     "singing_ability",
+//     "height_ft",
+//     "height_in",
+//   ];
+
+//   const cleanFilters = Object.fromEntries(
+//     Object.entries(parsedFilters)
+//       .filter(([, v]) => v !== null && v !== "0" && v !== "")
+//       .map(([key, value]) => [
+//         key,
+//         numberFields.includes(key) ? Number(value) : value,
+//       ])
+//   );
+
+//   return cleanFilters;
+// }
 
 export default SearchTerm;
