@@ -13,9 +13,9 @@ function DonorCard({
 }) {
   return (
     <Link key={donor._id} href={`/donor/${donor._id}`} className="">
-      <div className="relative">
+      <div className="relative flex justify-center">
         <ImageWithFallback
-          className="min-w-64 max-w-64 h-96 object-cover rounded-lg shadow-lg"
+          className="w-full rounded-lg aspect-square object-cover cursor-pointer"
           src={donor.user_image}
           alt={donor.user}
         />
