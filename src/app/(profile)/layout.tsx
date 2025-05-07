@@ -1,21 +1,10 @@
 import type { Metadata } from "next";
 import { Old_Standard_TT } from "next/font/google";
-import "./globals.css";
-import Header from "../components/Header";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import "../globals.css";
+import Header from "@/src/components/Header";
 
 const oldStandardFont = Old_Standard_TT({
   weight: "400",
-  style: "italic",
   variable: "--font-oldStandard",
 });
 
@@ -24,7 +13,7 @@ export const metadata: Metadata = {
   description: "Cofertility AI Search - Donor search made easy",
 };
 
-export default function RootLayout({
+export default function ProfileLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -32,11 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${oldStandardFont.variable}`}>
       <body>
-        <main>
-          <Header />
-
-          {children}
-        </main>
+        <Header />
+        <main className="bg-[#ffffff]">{children}</main>
       </body>
     </html>
   );

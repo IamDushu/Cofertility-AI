@@ -34,8 +34,6 @@ export const DonorSearchFilters = z.object({
     .enum(["no", "yes_maternal_side", "yes_both_sides", "yes_paternal_side"])
     .nullable()
     .optional(),
-  height_ft: z.string().nullable().optional(),
-  height_in: z.string().nullable().optional(),
   logical_creative: z.enum(["logical", "creative"]).nullable().optional(),
   serious_silly: z.enum(["serious", "silly"]).nullable().optional(),
   introvert_extrovert: z

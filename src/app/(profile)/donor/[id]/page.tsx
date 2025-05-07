@@ -9,7 +9,7 @@ export const revalidate = 60 * 60 * 24;
 
 async function DonorPage({ params }: { params: { id: string } }) {
   const { id } = await params;
-  const donors = db.collection("donor");
+  const donors = db.collection("donors");
 
   const search = await donors.find(
     { $and: [{ _id: id }] },
@@ -29,7 +29,7 @@ async function DonorPage({ params }: { params: { id: string } }) {
   similarDonors.shift();
 
   return (
-    <div>
+    <div className="px-50">
       <div className="flex flex-col md:flex-row items-center gap-y-10 p-10 pb-0">
         <Image
           src={donor.user_image}

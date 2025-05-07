@@ -3,6 +3,7 @@ export type Donor = {
   user: string;
   user_image: string;
   text: string;
+  job_title: string;
   artistic_ability: number;
   athletic_ability: number;
   mathematical_ability: number;
@@ -30,6 +31,8 @@ export type Donor = {
   food: string;
   $vectorize: string;
   $vector: Array<number>;
+  donorCode: string;
+  profile_bio: string;
 };
 
 export type SimilarDonor = {
