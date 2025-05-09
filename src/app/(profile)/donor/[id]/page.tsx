@@ -1,4 +1,4 @@
-import DonorCard from "@/src/components/DonorCard";
+// import DonorCard from "@/src/components/DonorCard";
 import db from "@/db";
 import { Donor, SimilarDonor } from "@/types";
 import Image from "next/image";
@@ -18,6 +18,7 @@ import {
 import { StarIcon } from "@heroicons/react/20/solid";
 import { HeartIcon, MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 import DonorBackButton from "@/src/components/BackButton";
+import { SimilarDonors } from "@/src/components/SimilarDonors";
 
 // refresh cache every 24 hours
 export const revalidate = 60 * 60 * 24;
@@ -337,10 +338,10 @@ async function DonorPage({ params }: { params: { id: string } }) {
           </div>
         </div>
         <div>
-          <h2 className="text-3xl font-main pt-10 font-bold ">
+          <h2 className="text-3xl font-main pt-10 mb-5 font-bold ">
             Similar Donors you may like
           </h2>
-          <div className="flex justify-between items-center lg:flex-row gap-x-20 gap-y-10 pl-20 pr-10 py-10 overflow-x-scroll">
+          {/* <div className="flex justify-between items-center lg:flex-row gap-x-20 gap-y-10 pl-20 pr-10 py-10 overflow-x-scroll">
             {similarDonors.map((donor, i) => {
               return (
                 <DonorCard
@@ -351,7 +352,8 @@ async function DonorPage({ params }: { params: { id: string } }) {
                 />
               );
             })}
-          </div>
+          </div> */}
+          <SimilarDonors donors={similarDonors} />
         </div>
       </div>
     </div>

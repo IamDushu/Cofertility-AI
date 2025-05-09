@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cdn.vectorstock.com",
       },
+      {
+        protocol: "https",
+        hostname: "assets.aceternity.com",
+      },
     ],
   },
 };
