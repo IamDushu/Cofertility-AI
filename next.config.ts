@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.cofertility.com",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.vectorstock.com",
+      },
     ],
   },
 };

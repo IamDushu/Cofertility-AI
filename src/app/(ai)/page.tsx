@@ -61,11 +61,11 @@ export default async function Home() {
     )
     .toArray()) as Donor[];
 
-  console.log(allDonors);
+  // console.log(allDonors);
 
   return (
     <div className="flex items-center justify-center pb-24">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-50">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-10 sm:px-40">
         {allDonors.map((donor) => (
           <DonorCard key={donor._id} donor={donor} />
         ))}

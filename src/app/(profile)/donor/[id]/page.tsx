@@ -70,7 +70,7 @@ async function DonorPage({ params }: { params: { id: string } }) {
         </div>
       </div>
 
-      <div className="">
+      <div>
         <h2 className="text-3xl pt-10 pl-10 font-bold ">
           Similar Donors you may like
         </h2>

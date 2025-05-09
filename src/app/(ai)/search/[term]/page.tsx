@@ -23,8 +23,8 @@ async function SearchTerm({
     cleanedfilters = processFilters(filters);
   }
 
-  console.log("Generated Filters: ", cleanedfilters);
-  console.log("Generated Filters: ", filters);
+  // console.log("Generated Filters: ", cleanedfilters);
+  // console.log("Generated Filters: ", filters);
 
   const similarDonors = (await donors
     .find(cleanedfilters || {}, {
@@ -82,7 +82,7 @@ async function SearchTerm({
   return (
     <div className="flex flex-col items-center justify-center px-50">
       <h1 className="mb-10 text-lg font-sans">
-        Top 10 matches based on your search:{" "}
+        Top matches based on your search:{" "}
         <span className="font-main">{decodeURIComponent(term)}</span>
       </h1>
 

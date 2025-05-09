@@ -3,6 +3,7 @@ import { Old_Standard_TT } from "next/font/google";
 import "../globals.css";
 import Header from "../../components/Header";
 import { AnimatedSearchInput } from "@/src/components/AnimatedSearchInput";
+import { BackgroundGradient } from "@/src/components/BackgroundGradient";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -34,9 +35,17 @@ export default function RootLayout({
       <body>
         <main className="bg-[#ffffff]">
           <Header />
-          <div className="w-full p-5 py-8 sticky top-21 z-50">
+          <div className="w-full p-5 pb-10 sticky top-21 z-50">
             {/* <SearchInput /> */}
-            <AnimatedSearchInput placeholders={["hi", "bye"]} />
+            <BackgroundGradient containerClassName="w-fit mx-auto p-0.5 rounded-full">
+              <AnimatedSearchInput
+                placeholders={[
+                  "donors who have wavy hair",
+                  "donors who are interested in maths",
+                  "donors who like cycling",
+                ]}
+              />
+            </BackgroundGradient>
           </div>
           {children}
         </main>
