@@ -1,6 +1,6 @@
 import DonorCard from "@/src/components/DonorCard";
 import db from "@/db";
-import { Donor } from "@/types";
+import { SimilarDonor } from "@/types";
 import { getFiltersFromSearchTerm } from "@/lib/openaiHelpers";
 
 // refresh cache every 24 hours
@@ -23,8 +23,8 @@ async function SearchTerm({
     cleanedfilters = processFilters(filters);
   }
 
-  // console.log("Generated Filters: ", cleanedfilters);
-  // console.log("Generated Filters: ", filters);
+  console.log("Generated Filters: ", cleanedfilters);
+  console.log("Generated Filters: ", filters);
 
   const similarDonors = (await donors
     .find(cleanedfilters || {}, {
@@ -75,9 +75,9 @@ async function SearchTerm({
         weight: false,
         age: false,
       },
-      // includeSimilarity: true,
+      includeSimilarity: true,
     })
-    .toArray()) as Donor[];
+    .toArray()) as SimilarDonor[];
 
   return (
     <div className="flex flex-col items-center justify-center px-50">
@@ -92,7 +92,9 @@ async function SearchTerm({
             <DonorCard
               key={donor._id}
               donor={donor}
-              // similarityRating={Number(donor.$similarity.toFixed(2)) * 100}
+              similarityRating={Number(
+                (similarDonors[0].$similarity * 100).toFixed(1)
+              )}
             />
           ))}
         </div>

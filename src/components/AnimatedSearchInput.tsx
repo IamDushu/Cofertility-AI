@@ -171,7 +171,7 @@ export function AnimatedSearchInput({
 
   return (
     <form
-      className="w-[90vw] sm:w-[600px] relative max-w-xl mx-auto bg-white h-12 sm:h-10 rounded-full overflow-hidden shadow-xl border-[#1e5951] border-1 transition duration-200"
+      className="w-[90vw] sm:w-[600px] relative max-w-xl mx-auto bg-[#faf9f5] h-12 sm:h-10 rounded-full overflow-hidden shadow-xl border-[#1e5951] border-1 transition duration-200"
       onSubmit={handleSubmit}
     >
       <canvas

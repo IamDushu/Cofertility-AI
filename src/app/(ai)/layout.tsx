@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${oldStandardFont.variable}`}>
       <body>
-        <main className="bg-[#ffffff]">
+        <main className="bg-[#f5f4ee]">
           <Header />
           <div className="w-full p-5 pb-10 sticky top-21 z-50">
             {/* <SearchInput /> */}

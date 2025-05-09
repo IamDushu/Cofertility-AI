@@ -2,6 +2,7 @@ export type Donor = {
   _id: string;
   user: string;
   user_image: string;
+  age: number;
   text: string;
   job_title: string;
   artistic_ability: number;

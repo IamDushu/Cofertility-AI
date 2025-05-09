@@ -22,7 +22,7 @@ export default function ProfileLayout({
     <html lang="en" className={`${oldStandardFont.variable}`}>
       <body>
         <Header />
-        <main className="bg-[#ffffff]">{children}</main>
+        <main className="bg-[#faf9f5]">{children}</main>
       </body>
     </html>
   );

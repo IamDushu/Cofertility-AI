@@ -10,5 +10,5 @@ export default function ProfileLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="bg-[#ffffff]">{children}</div>;
+  return <div className="bg-[#faf9f5]">{children}</div>;
 }

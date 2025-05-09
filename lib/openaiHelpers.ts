@@ -5,15 +5,13 @@ import { DonorSearchFilters } from "@/lib/zodSchemas";
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 export async function getFiltersFromSearchTerm(term: string) {
-  console.log("running");
-
   const response = await openai.responses.parse({
-    model: "gpt-4o-2024-08-06",
+    model: process.env.OPENAI_MODEL || "gpt-4.1-nano-2025-04-14",
     input: [
       {
         role: "system",
         content:
-          "Extract donor search filters from the user's query. Only include the fields that are explicitly mentioned or implied.",
+          "Extract donor search filters from the user's query. Only include the fields that are explicitly mentioned.",
       },
       {
         role: "user",
