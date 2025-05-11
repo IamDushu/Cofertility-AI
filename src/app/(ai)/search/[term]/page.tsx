@@ -4,7 +4,7 @@ import { SimilarDonor } from "@/types";
 import { getFiltersFromSearchTerm } from "@/lib/openaiHelpers";
 
 // refresh cache every 24 hours
-export const revalidate = 60 * 60 * 24;
+export const revalidate = 86400;
 
 async function SearchTerm({
   params,

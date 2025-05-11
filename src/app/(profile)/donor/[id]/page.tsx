@@ -23,7 +23,7 @@ import Favorites from "@/src/components/Favorites";
 import Personality from "@/src/components/Personality";
 
 // refresh cache every 24 hours
-export const revalidate = 60 * 60 * 24;
+export const revalidate = 86400;
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
