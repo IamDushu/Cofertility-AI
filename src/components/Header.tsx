@@ -7,7 +7,7 @@ import Link from "next/link";
 
 function Header() {
   return (
-    <header className="flex flex-col items-center sticky top-0 z-50 ">
+    <header className="flex flex-col items-center sticky top-0 z-50">
       <div className="bg-[#1e5951] w-full h-16 flex flex-col items-center justify-center py-10">
         <Link href={"/"}>
           <Image

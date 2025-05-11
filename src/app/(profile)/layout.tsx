@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Old_Standard_TT } from "next/font/google";
 import "../globals.css";
 import Header from "@/src/components/Header";
+import { SidebarComponent } from "@/src/components/SidebarComponent";
 
 const oldStandardFont = Old_Standard_TT({
   weight: "400",
@@ -21,8 +22,12 @@ export default function ProfileLayout({
   return (
     <html lang="en" className={`${oldStandardFont.variable}`}>
       <body>
-        <Header />
-        <main className="bg-[#faf9f5]">{children}</main>
+        <SidebarComponent>
+          <main className="bg-[#faf9f5]">
+            <Header />
+            {children}
+          </main>
+        </SidebarComponent>
       </body>
     </html>
   );

@@ -23,51 +23,6 @@ import { SimilarDonors } from "@/src/components/SimilarDonors";
 // refresh cache every 24 hours
 export const revalidate = 60 * 60 * 24;
 
-const product = {
-  name: "Zip Tote Basket",
-  price: "$140",
-  rating: 4,
-  images: [
-    {
-      id: 1,
-      name: "Angled view",
-      src: "https://images.cofertility.com/95faa15e-eeea-49e3-97eb-457f3bdb1ad4/7e654a5d-e120-455a-97f8-2a98abe39f99",
-      alt: "Angled front view with bag zipped and handles upright.",
-    },
-  ],
-  colors: [
-    {
-      name: "Washed Black",
-      bgColor: "bg-gray-700",
-      selectedColor: "ring-gray-700",
-    },
-    { name: "White", bgColor: "bg-white", selectedColor: "ring-gray-400" },
-    {
-      name: "Washed Gray",
-      bgColor: "bg-gray-500",
-      selectedColor: "ring-gray-500",
-    },
-  ],
-  description: `
-    <p>The Zip Tote Basket is the perfect midpoint between shopping tote and comfy backpack. With convertible straps, you can hand carry, should sling, or backpack this convenient and spacious bag. The zip top and durable canvas construction keeps your goods protected for all-day use.</p>
-  `,
-  details: [
-    {
-      name: "Features",
-      items: [
-        "Multiple strap configurations",
-        "Spacious interior with top zip",
-        "Leather handle and tabs",
-        "Interior dividers",
-        "Stainless strap loops",
-        "Double stitched construction",
-        "Water-resistant",
-      ],
-    },
-    // More sections...
-  ],
-};
-
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
@@ -86,8 +41,6 @@ async function DonorPage({ params }: { params: { id: string } }) {
   }
 
   const donor = (await search.next()) as Donor;
-
-  console.log("Donor:", donor);
   // const selectedColor = "Washed Gray";
 
   // To remove the current donor
@@ -149,7 +102,7 @@ async function DonorPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="bg-[#faf9f5]">
-      <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-5 lg:max-w-7xl lg:px-8">
+      <div className="px-4 py-10 sm:px-6 sm:py-5 lg:px-8">
         <DonorBackButton />
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
           {/* Image gallery */}
@@ -241,7 +194,6 @@ async function DonorPage({ params }: { params: { id: string } }) {
                     />
                   ))}
                 </div>
-                <p className="sr-only">{product.rating} out of 5 stars</p>
               </div>
             </div>
             <p className="text-[12px] text-gray-700">
@@ -305,34 +257,179 @@ async function DonorPage({ params }: { params: { id: string } }) {
               </h2>
 
               <div className="divide-y divide-gray-200 border-t">
-                {product.details.map((detail) => (
-                  <Disclosure key={detail.name} as="div">
-                    <h3>
-                      <DisclosureButton className="group relative flex w-full items-center justify-between py-6 text-left">
-                        <span className="text-sm font-medium text-gray-900 group-data-[open]:text-indigo-600">
-                          {detail.name}
-                        </span>
-                        <span className="ml-6 flex items-center">
-                          <PlusIcon
-                            aria-hidden="true"
-                            className="block h-6 w-6 text-gray-400 group-hover:text-gray-500 group-data-[open]:hidden"
-                          />
-                          <MinusIcon
-                            aria-hidden="true"
-                            className="hidden h-6 w-6 text-indigo-400 group-hover:text-indigo-500 group-data-[open]:block"
-                          />
-                        </span>
-                      </DisclosureButton>
-                    </h3>
-                    <DisclosurePanel className="prose prose-sm pb-6">
-                      <ul role="list">
-                        {detail.items.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    </DisclosurePanel>
-                  </Disclosure>
-                ))}
+                <Disclosure as="div">
+                  <h3>
+                    <DisclosureButton className="group relative flex w-full items-center justify-between py-4 text-left">
+                      <span className="text-sm font-medium text-gray-900 group-data-[open]:text-[#8c1948]">
+                        What are you passionate about? What are your hobbies,
+                        interests, or talents?
+                      </span>
+                      <span className="ml-6 flex items-center">
+                        <PlusIcon
+                          aria-hidden="true"
+                          className="block h-6 w-6 text-gray-400 group-hover:text-gray-500 group-data-[open]:hidden"
+                        />
+                        <MinusIcon
+                          aria-hidden="true"
+                          className="hidden h-6 w-6 text-indigo-400 group-hover:text-indigo-500 group-data-[open]:block"
+                        />
+                      </span>
+                    </DisclosureButton>
+                  </h3>
+                  <DisclosurePanel className="prose prose-sm pb-6">
+                    <p className="text-gray-700">{donor.passions}</p>
+                  </DisclosurePanel>
+                </Disclosure>
+              </div>
+              <div className="divide-y divide-gray-200 border-t">
+                <Disclosure as="div">
+                  <h3>
+                    <DisclosureButton className="group relative flex w-full items-center justify-between py-4 text-left">
+                      <span className="text-sm font-medium text-gray-900 group-data-[open]:text-[#8c1948]">
+                        What are your short-term and long-term goals in life?
+                      </span>
+                      <span className="ml-6 flex items-center">
+                        <PlusIcon
+                          aria-hidden="true"
+                          className="block h-6 w-6 text-gray-400 group-hover:text-gray-500 group-data-[open]:hidden"
+                        />
+                        <MinusIcon
+                          aria-hidden="true"
+                          className="hidden h-6 w-6 text-indigo-400 group-hover:text-indigo-500 group-data-[open]:block"
+                        />
+                      </span>
+                    </DisclosureButton>
+                  </h3>
+                  <DisclosurePanel className="prose prose-sm pb-6">
+                    <p className="text-gray-700">{donor.goals_in_life}</p>
+                  </DisclosurePanel>
+                </Disclosure>
+              </div>
+              <div className="divide-y divide-gray-200 border-t">
+                <Disclosure as="div">
+                  <h3>
+                    <DisclosureButton className="group relative flex w-full items-center justify-between py-4 text-left">
+                      <span className="text-sm font-medium text-gray-900 group-data-[open]:text-[#8c1948]">
+                        What would you consider to be your greatest strengths
+                        and why?
+                      </span>
+                      <span className="ml-6 flex items-center">
+                        <PlusIcon
+                          aria-hidden="true"
+                          className="block h-6 w-6 text-gray-400 group-hover:text-gray-500 group-data-[open]:hidden"
+                        />
+                        <MinusIcon
+                          aria-hidden="true"
+                          className="hidden h-6 w-6 text-indigo-400 group-hover:text-indigo-500 group-data-[open]:block"
+                        />
+                      </span>
+                    </DisclosureButton>
+                  </h3>
+                  <DisclosurePanel className="prose prose-sm pb-6">
+                    <p className="text-gray-700">{donor.greatest_strengths}</p>
+                  </DisclosurePanel>
+                </Disclosure>
+              </div>
+              <div className="divide-y divide-gray-200 border-t">
+                <Disclosure as="div">
+                  <h3>
+                    <DisclosureButton className="group relative flex w-full items-center justify-between py-4 text-left">
+                      <span className="text-sm font-medium text-gray-900 group-data-[open]:text-[#8c1948]">
+                        What would you do on a &apos;perfect&apos; day if you
+                        could do anything that you wanted?
+                      </span>
+                      <span className="ml-6 flex items-center">
+                        <PlusIcon
+                          aria-hidden="true"
+                          className="block h-6 w-6 text-gray-400 group-hover:text-gray-500 group-data-[open]:hidden"
+                        />
+                        <MinusIcon
+                          aria-hidden="true"
+                          className="hidden h-6 w-6 text-indigo-400 group-hover:text-indigo-500 group-data-[open]:block"
+                        />
+                      </span>
+                    </DisclosureButton>
+                  </h3>
+                  <DisclosurePanel className="prose prose-sm pb-6">
+                    <p className="text-gray-700">{donor.perfect_day}</p>
+                  </DisclosurePanel>
+                </Disclosure>
+              </div>
+              <div className="divide-y divide-gray-200 border-t">
+                <Disclosure as="div">
+                  <h3>
+                    <DisclosureButton className="group relative flex w-full items-center justify-between py-4 text-left">
+                      <span className="text-sm font-medium text-gray-900 group-data-[open]:text-[#8c1948]">
+                        If you were planning a dinner and could invite any three
+                        people (living or dead, famous or not), who would they
+                        be and why?
+                      </span>
+                      <span className="ml-6 flex items-center">
+                        <PlusIcon
+                          aria-hidden="true"
+                          className="block h-6 w-6 text-gray-400 group-hover:text-gray-500 group-data-[open]:hidden"
+                        />
+                        <MinusIcon
+                          aria-hidden="true"
+                          className="hidden h-6 w-6 text-indigo-400 group-hover:text-indigo-500 group-data-[open]:block"
+                        />
+                      </span>
+                    </DisclosureButton>
+                  </h3>
+                  <DisclosurePanel className="prose prose-sm pb-6">
+                    <p className="text-gray-700">{donor.dinner_party}</p>
+                  </DisclosurePanel>
+                </Disclosure>
+              </div>
+              <div className="divide-y divide-gray-200 border-t">
+                <Disclosure as="div">
+                  <h3>
+                    <DisclosureButton className="group relative flex w-full items-center justify-between py-4 text-left">
+                      <span className="text-sm font-medium text-gray-900 group-data-[open]:text-[#8c1948]">
+                        Please tell us about your motivation for donating your
+                        eggs as part of the Split program.
+                      </span>
+                      <span className="ml-6 flex items-center">
+                        <PlusIcon
+                          aria-hidden="true"
+                          className="block h-6 w-6 text-gray-400 group-hover:text-gray-500 group-data-[open]:hidden"
+                        />
+                        <MinusIcon
+                          aria-hidden="true"
+                          className="hidden h-6 w-6 text-indigo-400 group-hover:text-indigo-500 group-data-[open]:block"
+                        />
+                      </span>
+                    </DisclosureButton>
+                  </h3>
+                  <DisclosurePanel className="prose prose-sm pb-6">
+                    <p className="text-gray-700">{donor.motivation}</p>
+                  </DisclosurePanel>
+                </Disclosure>
+              </div>
+              <div className="divide-y divide-gray-200 border-t">
+                <Disclosure as="div">
+                  <h3>
+                    <DisclosureButton className="group relative flex w-full items-center justify-between py-4 text-left">
+                      <span className="text-sm font-medium text-gray-900 group-data-[open]:text-[#8c1948]">
+                        What message would you like to share with the intended
+                        parent(s)?
+                      </span>
+                      <span className="ml-6 flex items-center">
+                        <PlusIcon
+                          aria-hidden="true"
+                          className="block h-6 w-6 text-gray-400 group-hover:text-gray-500 group-data-[open]:hidden"
+                        />
+                        <MinusIcon
+                          aria-hidden="true"
+                          className="hidden h-6 w-6 text-indigo-400 group-hover:text-indigo-500 group-data-[open]:block"
+                        />
+                      </span>
+                    </DisclosureButton>
+                  </h3>
+                  <DisclosurePanel className="prose prose-sm pb-6">
+                    <p className="text-gray-700">{donor.message_to_ips}</p>
+                  </DisclosurePanel>
+                </Disclosure>
               </div>
             </section>
           </div>

@@ -113,7 +113,7 @@ export function SimilarDonors({ donors }: { donors: SimilarDonor[] }) {
         ) : null}
       </AnimatePresence>
 
-      <ul className="w-full grid grid-cols-1 md:grid-cols-5 gap-4">
+      <ul className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 ">
         {donors.map((donor) => (
           <motion.div
             layoutId={`card-${donor._id}-${id}`}

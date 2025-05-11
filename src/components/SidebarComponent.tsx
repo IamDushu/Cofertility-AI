@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "./sidebar";
 import {
-  IconArrowLeft,
   IconBrandTabler,
   IconSettings,
   IconUserBolt,
+  IconLogout2,
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -38,14 +38,14 @@ export function SidebarComponent({ children }: SidebarDemoProps) {
     {
       label: "Logout",
       href: "#",
-      icon: <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-200" />,
+      icon: <IconLogout2 className="h-5 w-5 shrink-0 text-neutral-200" />,
     },
   ];
   const [open, setOpen] = useState(false);
   return (
     <div
       className={cn(
-        "mx-auto flex w-full  flex-1 flex-col  border  md:flex-row bg-neutral-800"
+        "mx-auto flex w-full flex-1 flex-col  border  md:flex-row bg-neutral-800"
       )}
     >
       <Sidebar open={open} setOpen={setOpen}>
