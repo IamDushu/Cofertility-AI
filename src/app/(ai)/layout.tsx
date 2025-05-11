@@ -35,16 +35,23 @@ export default function RootLayout({
     <html lang="en" className={`${oldStandardFont.variable}`}>
       <body>
         <SidebarComponent>
-          <main className="bg-[#f5f4ee]">
+          <main className="bg-[#f5f4ee] w-[100vw]">
             <Header />
             <div className="w-full p-5 pb-10 sticky top-21 z-50 ">
               {/* <SearchInput /> */}
               <BackgroundGradient containerClassName="w-fit mx-auto p-0.5 rounded-full">
                 <AnimatedSearchInput
                   placeholders={[
-                    "donors who have wavy hair",
+                    "donors who practice yoga",
+                    "donors who are creative",
+                    "donors whose relationship preference is disclosed",
+                    "donors who enjoy hiking",
+                    "donors who have medical background",
+                    "donors who are introverts",
                     "donors who are interested in maths",
-                    "donors who like cycling",
+                    "donors with athletic backgrounds",
+                    "donors who like Italian food",
+                    "donors who love painting",
                   ]}
                 />
               </BackgroundGradient>

@@ -12,7 +12,7 @@ function DonorCard({
   donor: Donor | SimilarDonor;
 }) {
   return (
-    <Link key={donor._id} href={`/donor/${donor._id}`}>
+    <Link key={donor._id} href={`/donor/${donor._id}`} target="_blank">
       <div className="hover:scale-95 transition">
         <div className="relative flex justify-center ">
           <ImageWithFallback
@@ -22,7 +22,7 @@ function DonorCard({
           />
 
           {similarityRating && (
-            <div className="absolute w-14 h-14 flex items-center justify-center bottom-0 right-0 bg-orange-300 bg-opacity-90 p-2 rounded-full m-5 font-bold">
+            <div className="absolute w-14 h-14 flex items-center justify-center -bottom-4 -right-4 bg-orange-300 bg-opacity-90 p-2 rounded-full m-5 font-bold text-sm">
               {similarityRating}%
             </div>
           )}
@@ -38,7 +38,7 @@ function DonorCard({
           <p className="text-lg font-semibold line-clamp-1 w-64 font-main">
             {donor.donorCode}
           </p>
-          <p>{donor.job_title}</p>
+          <p className="font-sans font-medium text-sm">{donor.job_title}</p>
           <p className="text-gray-500 text-sm line-clamp-5">
             {donor.profile_bio}
           </p>

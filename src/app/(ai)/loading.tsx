@@ -1,10 +1,9 @@
 const Loading = () => {
   return (
     <div className="flex flex-col items-center justify-center px-10 sm:px-50">
-      <div className="size-10 w-100 rounded bg-gray-200 animate-pulse mb-10"></div>
       <div className="flex items-center justify-center pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {[1, 2, 3, 4].map((v, i) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((v, i) => (
             <div
               className="w-full rounded-md border border-gray-300 p-4"
               key={i}

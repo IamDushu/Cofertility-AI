@@ -17,7 +17,7 @@ import {
 } from "@headlessui/react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { HeartIcon, MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
-import DonorBackButton from "@/src/components/BackButton";
+// import DonorBackButton from "@/src/components/BackButton";
 import { SimilarDonors } from "@/src/components/SimilarDonors";
 import Favorites from "@/src/components/Favorites";
 import Personality from "@/src/components/Personality";
@@ -106,8 +106,8 @@ async function DonorPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="bg-[#faf9f5]">
-      <div className="px-4 py-10 sm:px-6 sm:py-5 lg:px-8">
-        <DonorBackButton />
+      <div className="px-4 py-10 sm:px-6 sm:py-8 lg:px-8">
+        {/* <DonorBackButton /> */}
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
           {/* Image gallery */}
           <TabGroup className="flex flex-col-reverse">
@@ -177,6 +177,17 @@ async function DonorPage({ params }: { params: { id: string } }) {
                 Age:{" "}
                 <span className="space-y-6 text-gray-700 text-sm">
                   {donor.age}
+                </span>
+              </h3>
+            </div>
+
+            {/* Relationship Preference  */}
+            <div className="mt-3 ">
+              <h3 className="font-sans font-medium text-sm">
+                Relationship preference:{" "}
+                <span className="space-y-6 text-gray-700 text-sm">
+                  {donor.relationship_preferences[0].toUpperCase() +
+                    donor.relationship_preferences.slice(1)}
                 </span>
               </h3>
             </div>
