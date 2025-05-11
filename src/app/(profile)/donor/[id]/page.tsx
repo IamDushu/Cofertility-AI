@@ -22,6 +22,12 @@ import { SimilarDonors } from "@/src/components/SimilarDonors";
 import Favorites from "@/src/components/Favorites";
 import Personality from "@/src/components/Personality";
 
+interface DonorPageProps {
+  params: Promise<{
+    id: string;
+  }>;
+}
+
 // refresh cache every 24 hours
 export const revalidate = 86400;
 
@@ -29,7 +35,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-async function DonorPage({ params }: { params: { id: string } }) {
+async function DonorPage({ params }: DonorPageProps) {
   const { id } = await params;
   const donors = db.collection("donors");
 

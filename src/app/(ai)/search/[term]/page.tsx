@@ -3,16 +3,16 @@ import db from "@/db";
 import { SimilarDonor } from "@/types";
 import { getFiltersFromSearchTerm } from "@/lib/openaiHelpers";
 
+interface SearchPageProps {
+  params: Promise<{
+    term: string;
+  }>;
+}
+
 // refresh cache every 24 hours
 export const revalidate = 86400;
 
-async function SearchTerm({
-  params,
-}: {
-  params: {
-    term: string;
-  };
-}) {
+async function SearchTerm({ params }: SearchPageProps) {
   const { term } = await params;
 
   const donors = db.collection("donors");
