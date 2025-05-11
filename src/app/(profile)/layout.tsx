@@ -6,6 +6,7 @@ import { SidebarComponent } from "@/src/components/SidebarComponent";
 
 const oldStandardFont = Old_Standard_TT({
   weight: "400",
+  subsets: ["latin"],
   variable: "--font-oldStandard",
 });
 
