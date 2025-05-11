@@ -83,8 +83,8 @@ export function SidebarComponent({ children }: SidebarDemoProps) {
 }
 export const Logo = () => {
   return (
-    <a
-      href="#"
+    <Link
+      href={"/"}
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
     >
       <motion.span
@@ -92,17 +92,15 @@ export const Logo = () => {
         animate={{ opacity: 1 }}
         className="font-main whitespace-pre text-white text-lg"
       >
-        <Link href={"/"}>
-          <Image
-            src={logo}
-            alt="logo"
-            height={20}
-            width={150}
-            className="w-[100px] h-[40px]"
-          />
-        </Link>
+        <Image
+          src={logo}
+          alt="logo"
+          height={20}
+          width={150}
+          className="w-[100px] h-[40px]"
+        />
       </motion.span>
-    </a>
+    </Link>
   );
 };
 export const LogoIcon = () => {

@@ -19,6 +19,8 @@ import { StarIcon } from "@heroicons/react/20/solid";
 import { HeartIcon, MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 import DonorBackButton from "@/src/components/BackButton";
 import { SimilarDonors } from "@/src/components/SimilarDonors";
+import Favorites from "@/src/components/Favorites";
+import Personality from "@/src/components/Personality";
 
 // refresh cache every 24 hours
 export const revalidate = 60 * 60 * 24;
@@ -41,6 +43,8 @@ async function DonorPage({ params }: { params: { id: string } }) {
   }
 
   const donor = (await search.next()) as Donor;
+
+  // console.log(donor);
   // const selectedColor = "Washed Gray";
 
   // To remove the current donor
@@ -434,6 +438,19 @@ async function DonorPage({ params }: { params: { id: string } }) {
             </section>
           </div>
         </div>
+        {/* My Favorites  */}
+        <div className="mt-10">
+          <Favorites movie={donor.movie} food={donor.food} book={donor.book} />
+        </div>
+        {/* My Personality  */}
+        <div className="mt-10">
+          <Personality
+            logical_creative={donor.logical_creative}
+            serious_silly={donor.serious_silly}
+            introvert_extrovert={donor.introvert_extrovert}
+          />
+        </div>
+        {/* Recommendations  */}
         <div>
           <h2 className="text-3xl font-main pt-10 mb-5 font-bold ">
             Similar Donors you may like
