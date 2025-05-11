@@ -80,7 +80,7 @@ async function SearchTerm({
     .toArray()) as SimilarDonor[];
 
   return (
-    <div className="flex flex-col items-center justify-center px-50">
+    <div className="flex flex-col items-center justify-center px-10 sm:px-50">
       <h1 className="mb-10 text-lg font-sans">
         Top matches based on your search:{" "}
         <span className="font-main">{decodeURIComponent(term)}</span>

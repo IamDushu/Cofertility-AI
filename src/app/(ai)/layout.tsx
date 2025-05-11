@@ -4,6 +4,7 @@ import "../globals.css";
 import Header from "../../components/Header";
 import { AnimatedSearchInput } from "@/src/components/AnimatedSearchInput";
 import { BackgroundGradient } from "@/src/components/BackgroundGradient";
+import { SidebarComponent } from "@/src/components/SidebarComponent";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -33,22 +34,24 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${oldStandardFont.variable}`}>
       <body>
-        <main className="bg-[#f5f4ee]">
-          <Header />
-          <div className="w-full p-5 pb-10 sticky top-21 z-50">
-            {/* <SearchInput /> */}
-            <BackgroundGradient containerClassName="w-fit mx-auto p-0.5 rounded-full">
-              <AnimatedSearchInput
-                placeholders={[
-                  "donors who have wavy hair",
-                  "donors who are interested in maths",
-                  "donors who like cycling",
-                ]}
-              />
-            </BackgroundGradient>
-          </div>
-          {children}
-        </main>
+        <SidebarComponent>
+          <main className="bg-[#f5f4ee]">
+            <Header />
+            <div className="w-full p-5 pb-10 sticky top-21 z-50 ">
+              {/* <SearchInput /> */}
+              <BackgroundGradient containerClassName="w-fit mx-auto p-0.5 rounded-full">
+                <AnimatedSearchInput
+                  placeholders={[
+                    "donors who have wavy hair",
+                    "donors who are interested in maths",
+                    "donors who like cycling",
+                  ]}
+                />
+              </BackgroundGradient>
+            </div>
+            {children}
+          </main>
+        </SidebarComponent>
       </body>
     </html>
   );
