@@ -5,11 +5,11 @@ const Loading = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((v, i) => (
             <div
-              className="w-full rounded-md border border-gray-300 p-4"
+              className="w-full rounded-md border border-gray-300 p-4 animate-pulse"
               key={i}
             >
-              <div className="flex flex-col animate-pulse space-x-4">
-                <div className="size-40 rounded-full bg-gray-200 mb-5"></div>
+              <div className="flex flex-col animate-pulse space-x-4 ">
+                <div className="size-40 rounded-md mx-auto bg-gray-200 mb-5"></div>
                 <div className="flex-1 flex-col space-y-6 py-1">
                   <div className="h-5 rounded bg-gray-200"></div>
                   <div className="space-y-3">
