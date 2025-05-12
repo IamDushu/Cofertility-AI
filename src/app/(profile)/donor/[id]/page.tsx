@@ -188,15 +188,17 @@ async function DonorPage({ params }: DonorPageProps) {
             </div>
 
             {/* Relationship Preference  */}
-            <div className="mt-3 ">
-              <h3 className="font-sans font-medium text-sm">
-                Relationship preference:{" "}
-                <span className="space-y-6 text-gray-700 text-sm">
-                  {donor.relationship_preferences[0].toUpperCase() +
-                    donor.relationship_preferences.slice(1)}
-                </span>
-              </h3>
-            </div>
+            {donor.relationship_preferences && (
+              <div className="mt-3 ">
+                <h3 className="font-sans font-medium text-sm">
+                  Relationship preference:{" "}
+                  <span className="space-y-6 text-gray-700 text-sm">
+                    {donor.relationship_preferences[0].toUpperCase() +
+                      donor.relationship_preferences.slice(1)}
+                  </span>
+                </h3>
+              </div>
+            )}
 
             {/* AMH Rating */}
             <div className="mt-3 mb-1">
