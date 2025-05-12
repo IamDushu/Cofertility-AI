@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import { AnimatedSearchInput } from "@/src/components/AnimatedSearchInput";
 import { BackgroundGradient } from "@/src/components/BackgroundGradient";
 import { SidebarComponent } from "@/src/components/SidebarComponent";
+import { Analytics } from "@vercel/analytics/next";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -60,6 +61,7 @@ export default function RootLayout({
             {children}
           </main>
         </SidebarComponent>
+        <Analytics />
       </body>
     </html>
   );

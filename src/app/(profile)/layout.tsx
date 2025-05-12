@@ -3,6 +3,7 @@ import { Old_Standard_TT } from "next/font/google";
 import "../globals.css";
 import Header from "@/src/components/Header";
 import { SidebarComponent } from "@/src/components/SidebarComponent";
+import { Analytics } from "@vercel/analytics/next";
 
 const oldStandardFont = Old_Standard_TT({
   weight: "400",
@@ -29,6 +30,7 @@ export default function ProfileLayout({
             {children}
           </main>
         </SidebarComponent>
+        <Analytics />
       </body>
     </html>
   );
