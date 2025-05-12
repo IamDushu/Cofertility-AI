@@ -28,7 +28,7 @@ async function SearchTerm({ params }: SearchPageProps) {
 
   const similarDonors = (await donors
     .find(cleanedfilters || {}, {
-      vectorize: decodeURIComponent(term),
+      vectorize: decodeURIComponent(term).toLowerCase(),
       limit: 10,
       // Do not include vectors in the output.
       projection: {
