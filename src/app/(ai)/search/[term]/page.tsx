@@ -82,22 +82,37 @@ async function SearchTerm({ params }: SearchPageProps) {
   return (
     <div className="flex flex-col items-center justify-center px-10 sm:px-50">
       <h1 className="mb-10 text-lg font-sans">
-        Top matches based on your search:{" "}
+        {similarDonors.length
+          ? "Top matches based on your search: "
+          : "No matches found for: "}
         <span className="font-main">{decodeURIComponent(term)}</span>
       </h1>
 
       <div className="flex items-center justify-center pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {similarDonors.map((donor) => (
-            <DonorCard
-              key={donor._id}
-              donor={donor}
-              similarityRating={Number(
-                (similarDonors[0].$similarity * 100).toFixed(1)
-              )}
-            />
-          ))}
-        </div>
+        {similarDonors.length ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {similarDonors.map((donor) => (
+              <DonorCard
+                key={donor._id}
+                donor={donor}
+                similarityRating={Number(
+                  (similarDonors[0].$similarity * 100).toFixed(1)
+                )}
+              />
+            ))}
+          </div>
+        ) : (
+          <video
+            width="400"
+            height="240"
+            autoPlay
+            preload="auto"
+            loop
+            className="rounded-4xl border-dashed border-2"
+          >
+            <source src="/noMatch.mp4" type="video/mp4" />
+          </video>
+        )}
       </div>
     </div>
   );

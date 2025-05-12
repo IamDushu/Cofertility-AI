@@ -11,7 +11,7 @@ export async function getFiltersFromSearchTerm(term: string) {
       {
         role: "system",
         content:
-          "Extract donor search filters from the user's query. Only include the fields that are explicitly mentioned.",
+          "Extract donor search filters from the user's query. Only include the fields that are explicitly mentioned, if not explicitly mentioned then do not infer.",
       },
       {
         role: "user",
