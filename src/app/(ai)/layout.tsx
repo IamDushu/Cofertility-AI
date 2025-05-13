@@ -44,16 +44,22 @@ export default function RootLayout({
               <BackgroundGradient containerClassName="w-fit mx-auto p-0.5 rounded-full">
                 <AnimatedSearchInput
                   placeholders={[
-                    "donors who practice yoga",
-                    "donors who are creative",
-                    "donors whose relationship preference is disclosed",
-                    "donors who enjoy hiking",
-                    "donors who have medical background",
+                    "donors who are passionate about animals",
                     "donors who are introverts",
-                    "donors who are interested in maths",
-                    "donors with athletic backgrounds",
+                    "donors with blonde hair",
+                    "donors who are vegetarian",
+                    "donors who are teachers",
                     "donors who like Italian food",
+                    "donors with blue eyes",
+                    "donors who have medical background",
                     "donors who love painting",
+                    "donors who enjoy hiking",
+                    "donors with Jewish ancestry on the maternal side",
+                    "donors who have dimples",
+                    "donors with olive complexion",
+                    "donors with a master's degree",
+                    "donors with excellent vision",
+                    "donors with siblings",
                   ]}
                 />
               </BackgroundGradient>

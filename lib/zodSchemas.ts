@@ -1,23 +1,6 @@
 import { z } from "zod";
 
 export const DonorSearchFilters = z.object({
-  artistic_ability: z
-    .enum(["0", "1", "2", "3", "4", "5"])
-    .nullable()
-    .optional(),
-  athletic_ability: z
-    .enum(["0", "1", "2", "3", "4", "5"])
-    .nullable()
-    .optional(),
-  mathematical_ability: z
-    .enum(["0", "1", "2", "3", "4", "5"])
-    .nullable()
-    .optional(),
-  scientific_ability: z
-    .enum(["0", "1", "2", "3", "4", "5"])
-    .nullable()
-    .optional(),
-  singing_ability: z.enum(["0", "1", "2", "3", "4", "5"]).nullable().optional(),
   hair_type: z
     .enum(["wavy", "curly", "coily", "straight"])
     .nullable()
