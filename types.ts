@@ -12,7 +12,6 @@ export type Donor = {
   singing_ability: number;
   hair_type: string;
   hair_color: string;
-  hair_style: string;
   hair_texture: string;
   eye_color: string;
   dimples: string;

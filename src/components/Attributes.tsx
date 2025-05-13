@@ -6,7 +6,7 @@ export default function Attributes({
   eye_color,
   complexion,
   hair_color,
-  hair_style,
+  hair_type,
   hair_texture,
   dominant_hand,
   freckles,
@@ -25,7 +25,7 @@ export default function Attributes({
   eye_color?: string;
   complexion?: string;
   hair_color?: string;
-  hair_style?: string;
+  hair_type?: string;
   hair_texture?: string;
   dominant_hand?: string;
   freckles?: string;
@@ -53,7 +53,13 @@ export default function Attributes({
             {eye_color && (
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-900">Eye color</dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 flex gap-1">
+                  <Image
+                    src={`https://match.cofertility.com/images/profile/${eye_color}.svg`}
+                    alt="eye color"
+                    width={15}
+                    height={15}
+                  />
                   {eye_color}
                 </dd>
               </div>
@@ -63,11 +69,19 @@ export default function Attributes({
                 <dt className="text-sm font-medium text-gray-900">
                   Complexion
                 </dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 flex gap-1">
+                  <Image
+                    src={`https://match.cofertility.com/images/profile/${complexion}.svg`}
+                    alt="eye color"
+                    width={15}
+                    height={15}
+                  />
                   {complexion === "very_fair"
                     ? "Very fair"
                     : complexion === "light_brown"
                     ? "Light brown"
+                    : complexion === "dark_brown"
+                    ? "Dark brown"
                     : complexion}
                 </dd>
               </div>
@@ -77,18 +91,32 @@ export default function Attributes({
                 <dt className="text-sm font-medium text-gray-900">
                   Hair color
                 </dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                  {hair_color}
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 flex gap-1">
+                  <Image
+                    src={`https://match.cofertility.com/images/profile/${hair_color}.svg`}
+                    alt="eye color"
+                    width={15}
+                    height={15}
+                  />
+                  {hair_color === "strawberry_blonde"
+                    ? "Strawberry blonde"
+                    : hair_color}
                 </dd>
               </div>
             )}
-            {hair_style && (
+            {hair_type && (
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-900">
                   Hair style
                 </dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                  {hair_style}
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 flex gap-1">
+                  <Image
+                    src={`https://match.cofertility.com/images/profile/${hair_type}.svg`}
+                    alt="eye color"
+                    width={15}
+                    height={15}
+                  />
+                  {hair_type}
                 </dd>
               </div>
             )}
@@ -97,7 +125,13 @@ export default function Attributes({
                 <dt className="text-sm font-medium text-gray-900">
                   Hair texture
                 </dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 flex gap-1">
+                  <Image
+                    src={`https://match.cofertility.com/images/profile/${hair_texture}.svg`}
+                    alt="eye color"
+                    width={15}
+                    height={15}
+                  />
                   {hair_texture}
                 </dd>
               </div>
@@ -161,7 +195,7 @@ export default function Attributes({
                 <dt className="text-sm font-medium text-gray-900">Diet</dt>
                 <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                   {diet === "meat_eater_non_vegetarian"
-                    ? "Meat eater/Non-Vegetarian"
+                    ? "Meat eater/Non vegetarian"
                     : diet}
                 </dd>
               </div>

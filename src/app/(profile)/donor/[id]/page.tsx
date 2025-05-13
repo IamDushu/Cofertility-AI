@@ -515,7 +515,7 @@ async function DonorPage({ params }: DonorPageProps) {
             eye_color={donor.eye_color}
             complexion={donor.complexion}
             hair_color={donor.hair_color}
-            hair_style={donor.hair_style}
+            hair_type={donor.hair_type}
             hair_texture={donor.hair_texture}
             dominant_hand={donor.dominant_hand}
             freckles={donor.freckles}
