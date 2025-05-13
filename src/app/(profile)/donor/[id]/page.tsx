@@ -21,7 +21,11 @@ import { HeartIcon, MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { SimilarDonors } from "@/src/components/SimilarDonors";
 import Favorites from "@/src/components/Favorites";
 import Personality from "@/src/components/Personality";
-
+import Attributes from "@/src/components/Attributes";
+import WomanIcon from "@/public/physical_attributes_icon.svg";
+import MedicalIcon from "@/public/medical_history_icon.svg";
+import FamilyIcon from "@/public/family_attributes_icon.svg";
+import AptitudeStats from "@/src/components/AptitudeStats";
 interface DonorPageProps {
   params: Promise<{
     id: string;
@@ -186,6 +190,28 @@ async function DonorPage({ params }: DonorPageProps) {
                 </span>
               </h3>
             </div>
+
+            {/* Education */}
+            {donor.education_level && (
+              <div className="mt-3 ">
+                <h3 className="font-sans font-medium text-sm">
+                  Education:{" "}
+                  <span className="space-y-6 text-gray-700 text-sm">
+                    {donor.education_level === "associate_degree"
+                      ? "Associate degree"
+                      : donor.education_level === "bachelors_degree"
+                      ? "Bachelors degree"
+                      : donor.education_level === "masters_degree"
+                      ? "Masters degree"
+                      : donor.education_level === "professional_degree"
+                      ? "Professional degree"
+                      : donor.education_level === "some_college_no_degree"
+                      ? "Some college/no degree"
+                      : donor.education_level}
+                  </span>
+                </h3>
+              </div>
+            )}
 
             {/* Relationship Preference  */}
             {donor.relationship_preferences && (
@@ -468,6 +494,51 @@ async function DonorPage({ params }: DonorPageProps) {
             serious_silly={donor.serious_silly}
             introvert_extrovert={donor.introvert_extrovert}
           />
+        </div>
+
+        {/* Aptitude rating  */}
+        <div className="mt-5">
+          <AptitudeStats
+            artistic_ability={donor.artistic_ability}
+            athletic_ability={donor.athletic_ability}
+            mathematical_ability={donor.mathematical_ability}
+            singing_ability={donor.singing_ability}
+            scientific_ability={donor.scientific_ability}
+          />
+        </div>
+
+        {/* Physical Attributes  */}
+        <div className="flex flex-col md:flex-row gap-10 mt-5">
+          <Attributes
+            title="Physical Attributes"
+            icon={WomanIcon}
+            eye_color={donor.eye_color}
+            complexion={donor.complexion}
+            hair_color={donor.hair_color}
+            hair_style={donor.hair_style}
+            hair_texture={donor.hair_texture}
+            dominant_hand={donor.dominant_hand}
+            freckles={donor.freckles}
+            dimples={donor.dimples}
+          />
+          <div>
+            <Attributes
+              title="Medical History"
+              icon={MedicalIcon}
+              allergies={donor.allergies}
+              dental_work={donor.dental_work}
+              egg_retrieval={donor.egg_retrieval}
+              diet={donor.diet}
+              vision_quality={donor.vision_quality}
+            />
+            <Attributes
+              title="Family attributes"
+              icon={FamilyIcon}
+              jewish_ancestry={donor.jewish_ancestry}
+              marital_status={donor.marital_status}
+              siblings={donor.siblings}
+            />
+          </div>
         </div>
         {/* Recommendations  */}
         <div>
