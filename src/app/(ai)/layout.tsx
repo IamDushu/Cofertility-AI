@@ -50,6 +50,7 @@ export default function RootLayout({
                     "donors who are vegetarian",
                     "donors who are teachers",
                     "donors who like Italian food",
+                    "donors who have not donated eggs before",
                     "donors with blue eyes",
                     "donors who have medical background",
                     "donors who love painting",
