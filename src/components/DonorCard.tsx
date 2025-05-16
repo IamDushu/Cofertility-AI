@@ -16,7 +16,7 @@ function DonorCard({
       <div className="hover:scale-95 transition">
         <div className="relative flex justify-center ">
           <ImageWithFallback
-            className="w-full rounded-lg aspect-square object-cover cursor-pointer"
+            className="w-full rounded-lg aspect-square object-cover object-top cursor-pointer"
             src={donor.user_image}
             alt={donor.user}
           />
