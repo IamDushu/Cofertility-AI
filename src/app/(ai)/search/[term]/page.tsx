@@ -95,9 +95,7 @@ async function SearchTerm({ params }: SearchPageProps) {
               <DonorCard
                 key={donor._id}
                 donor={donor}
-                similarityRating={Number(
-                  (similarDonors[0].$similarity * 100).toFixed(1)
-                )}
+                similarityRating={Number((donor.$similarity * 100).toFixed(1))}
               />
             ))}
           </div>
