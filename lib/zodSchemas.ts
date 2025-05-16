@@ -55,10 +55,6 @@ export const DonorSearchFilters = z.object({
     .enum(["introverted", "extroverted", "ambiverted"])
     .nullable()
     .optional(),
-  relationship_preferences: z
-    .enum(["either", "disclosed", "undisclosed"])
-    .nullable()
-    .optional(),
   allergies: z.enum(["yes", "no"]).nullable().optional(),
   dental_work: z.enum(["yes", "no"]).nullable().optional(),
   egg_retrieval: z.enum(["yes", "no"]).nullable().optional(),

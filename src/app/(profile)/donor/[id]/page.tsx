@@ -214,7 +214,7 @@ async function DonorPage({ params }: DonorPageProps) {
             )}
 
             {/* Relationship Preference  */}
-            {donor.relationship_preferences && (
+            {/* {donor.relationship_preferences && (
               <div className="mt-3 ">
                 <h3 className="font-sans font-medium text-sm">
                   Relationship preference:{" "}
@@ -224,7 +224,7 @@ async function DonorPage({ params }: DonorPageProps) {
                   </span>
                 </h3>
               </div>
-            )}
+            )} */}
 
             {/* AMH Rating */}
             <div className="mt-3 mb-1">
