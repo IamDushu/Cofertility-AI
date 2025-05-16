@@ -72,4 +72,13 @@ export const DonorSearchFilters = z.object({
     ])
     .nullable()
     .optional(),
+  mathematical_ability: z
+    .enum(["0", "1", "2", "3", "4", "5"])
+    .nullable()
+    .optional(),
+  scientific_ability: z
+    .enum(["0", "1", "2", "3", "4", "5"])
+    .nullable()
+    .optional(),
+  singing_ability: z.enum(["0", "1", "2", "3", "4", "5"]).nullable().optional(),
 });
