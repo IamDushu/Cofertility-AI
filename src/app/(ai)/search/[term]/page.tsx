@@ -29,7 +29,7 @@ async function SearchTerm({ params }: SearchPageProps) {
   const similarDonors = (await donors
     .find(cleanedfilters || {}, {
       vectorize: decodeURIComponent(term).toLowerCase(),
-      limit: 20,
+      limit: 10,
       // Do not include vectors in the output.
       projection: {
         $vector: false,
