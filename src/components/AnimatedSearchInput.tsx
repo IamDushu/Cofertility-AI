@@ -201,7 +201,7 @@ export function AnimatedSearchInput({
       <button
         disabled={!value}
         type="submit"
-        className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-gray-100 bg-[#ed795e] transition duration-200 flex items-center justify-center"
+        className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-full disabled:bg-gray-100 disabled:cursor-default bg-[#ed795e] transition duration-200 flex items-center justify-center cursor-pointer"
       >
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
