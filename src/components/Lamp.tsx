@@ -66,7 +66,7 @@ export function Lamp() {
         </Link>
         <span>|</span>
         <Link
-          href={"https://dushyanth.in"}
+          href={"https://blog.dushyanth.in"}
           className="font-bold"
           target="_blank"
         >
@@ -75,7 +75,7 @@ export function Lamp() {
         <span>|</span>
 
         <Link
-          href={"https://dushyanth.in"}
+          href={"https://x.com/iam_dushu"}
           className="font-bold"
           target="_blank"
         >
@@ -85,7 +85,7 @@ export function Lamp() {
         <span>|</span>
 
         <Link
-          href={"https://dushyanth.in"}
+          href={"https://www.linkedin.com/in/g-dushyanth/"}
           className="font-bold"
           target="_blank"
         >
