@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Old_Standard_TT } from "next/font/google";
 import "../globals.css";
-import Header from "../../components/Header";
-import { AnimatedSearchInput } from "@/src/components/AnimatedSearchInput";
-import { BackgroundGradient } from "@/src/components/BackgroundGradient";
-import { SidebarComponent } from "@/src/components/SidebarComponent";
+// import Header from "../../components/Header";
+// import { AnimatedSearchInput } from "@/src/components/AnimatedSearchInput";
+// import { BackgroundGradient } from "@/src/components/BackgroundGradient";
+// import { SidebarComponent } from "@/src/components/SidebarComponent";
 import { Analytics } from "@vercel/analytics/next";
+import { Lamp } from "@/src/components/Lamp";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -28,19 +29,18 @@ export const metadata: Metadata = {
   description: "Cofertility AI Search - Donor search made easy",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default function RootLayout({}: // children,
+Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en" className={`${oldStandardFont.variable}`}>
       <body>
-        <SidebarComponent>
+        <Lamp />
+        {/* <SidebarComponent>
           <main className="bg-[#f5f4ee] w-[100vw]">
             <Header />
             <div className="w-full p-5 pb-10 sticky top-21 z-50 ">
-              {/* <SearchInput /> */}
               <BackgroundGradient containerClassName="w-fit mx-auto p-0.5 rounded-full">
                 <AnimatedSearchInput
                   placeholders={[
@@ -69,7 +69,7 @@ export default function RootLayout({
             </div>
             {children}
           </main>
-        </SidebarComponent>
+        </SidebarComponent> */}
         <Analytics />
       </body>
     </html>
