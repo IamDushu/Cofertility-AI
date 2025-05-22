@@ -43,6 +43,7 @@ export function Lamp() {
           className="font-bold"
           target="_blank"
         >
+          {" "}
           Dushyanth
         </Link>
       </motion.p>
