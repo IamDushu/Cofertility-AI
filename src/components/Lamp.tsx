@@ -32,10 +32,11 @@ export function Lamp() {
       >
         This demo has been taken down in accordance with Cofertility’s Terms of
         Use. It was privately shared with members of the Cofertility team to
-        present a conceptual idea for feedback and was never intended for public
-        access. Out of respect for their policies and community, the demo is no
-        longer available. Grateful for the conversations this sparked - wishing
-        the Cofertility team continued success in their meaningful work.
+        present a conceptual idea exploring a new, AI-driven approach to
+        matching Intended Parents and egg donors, and was never intended for
+        public access. Out of respect for their policies and community, the demo
+        is no longer available. Grateful for the conversations this sparked -
+        wishing the Cofertility team continued success in their meaningful work.
         <br />—
         <Link
           href={"https://dushyanth.in"}
